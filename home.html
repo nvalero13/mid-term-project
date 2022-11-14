@@ -1,13 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="project-assets/logos/circle.svg" alt="Circle logo" />
+      <button class="nav-burger">
+        <img src="project-assets/nav/burguer-icon.svg" alt="Burger menu icon">
+      </button>
+      <div class="nav-info">
+      <nav>
+        <ul>
+          <a href="home.html"><li class="headline-medium">Home</li></a>
+          <a href="projects.html"><li class="headline-medium">Projects</li></a>
+          <a href="#"><li class="headline-medium">Contact</li></a>
+        </ul>
+      </nav>
+        <a href="contact.html">
+        <button class="blue-filled-btn headline-medium">Contact Us</button>
+        </a>
+    </div>
+    </header>
+    <section id="hero">
+    <div id="hero-text">
+      <h1>Empower Your Business With Stunning Design!</h1>
+      <p class="body-regular">
+        Circle is a digital design and development studio. We design and develop
+        astonishing websites and mobile apps.
+      </p>
+      <div class="btns">
+        <a href="contact.html">
+            <button class="blue-filled-btn headline-medium">
+            Get in touch
+          </button>
+        </a>
+        <a href="projects.html" class="grey-a headline-medium">See our work</a>
+      </div>
+    </div>
+    <div id="hero-img">
+        <img src="project-assets/hero-section/hero-image.png" class="main-img" alt="Hero image">
+        <img src="project-assets/hero-section/card-1.png" class="card1" alt="Card image 1">
+        <img src="project-assets/hero-section/card-2.png" class="card2" alt="Card image 2">
+    </div>
+    </section>
     <script src="functions.js"></script>
-</body>
+  </body>
 </html>
