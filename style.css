@@ -58,6 +58,7 @@ h4 {
   font-weight: 500;
   font-size: 17px;
   line-height: 130%;
+  color: var(--neutral-medium);
 }
 
 .headline-regular {
@@ -151,7 +152,7 @@ button:hover {
 #hero-img .card2 {
   position: absolute;
   width: 65%;
-  left: 55%;
+  left: 50%;
   top: 60%;
 }
 
@@ -174,4 +175,172 @@ button:hover {
 
 .grey-a {
   color: var(--neutral-medium);
+}
+
+/* COMPANIES */
+
+#companies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+#companies img {
+  filter: grayscale();
+  margin: 5px;
+}
+
+/* RECENT PROJECTS */
+
+#recent-projects {
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 38px 77px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.card .body-medium,
+.card p {
+  margin: 5px 0;
+}
+
+.card-text {
+  padding: 30px;
+}
+
+.card a {
+  margin-top: 50px;
+  color: var(--primary-default);
+}
+
+/* FEEDBACK  */
+
+#feedback {
+  background-color: var(--neutral-dark);
+  margin: 0 -5%;
+  padding: 120px 20px 160px 20px;
+  height: 550px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+
+  background-image: url(./project-assets/testimonial-section/orbit.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#feedback h3 {
+  color: var(--neutral-light);
+}
+
+#feedback .body-regular {
+  color: var(--secondary);
+  max-width: 600px;
+}
+
+.emojis {
+  top: 0;
+  height: 160%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* .emojis {
+  top: 50%;
+  transform: translateY(-50%);
+  height: 80%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 50%;
+} */
+
+.emoji {
+  width: 150px;
+  height: 150px;
+}
+
+.user img {
+  border-radius: 25px;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px;
+}
+
+.user-info {
+  text-align: left;
+}
+
+.user .headline-regular {
+  color: var(--primary-hover);
+  margin: 0;
+}
+
+.user .caption2 {
+  color: var(--neutral-light);
+  margin: 0;
+}
+
+/* OUR SERVICES SECTION */
+
+#services .cards {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+#services .card .img-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  background-color: var(--neutral-lightblue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#services .card {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 360px;
+  padding: 40px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#services .card img {
+  width: 40px;
+  height: 40px;
 }
