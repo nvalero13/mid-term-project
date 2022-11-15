@@ -10,37 +10,18 @@
       rel="stylesheet"
       href="//fonts.googleapis.com/css?family=Roboto:300,400,600,700&amp;lang=en"
     />
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+      $(()=>{
+        $("header").load("nav.html");
+        $("footer").load("footer.html");
+      });
+    </script>
   </head>
   <body>
     <div id="web-container">
       <header>
-        <div class="mobile-header">
-          <img src="project-assets/logos/circle.svg" alt="Circle logo" />
-          <button class="nav-burger">
-            <img
-              src="project-assets/nav/burguer-icon.svg"
-              alt="Burger menu icon"
-            />
-          </button>
-        </div>
-        <div class="nav-info">
-          <nav>
-            <ul>
-              <a id="nav-home" href="home.html"
-                ><li class="headline-medium active">Home</li></a
-              >
-              <a id="nav-projects" href="projects.html"
-                ><li class="headline-medium">Projects</li></a
-              >
-              <a id="nav-contact" href="#"
-                ><li class="headline-medium">Contact</li></a
-              >
-            </ul>
-          </nav>
-          <a href="contact.html">
-            <button class="blue-filled-btn headline-medium">Contact Us</button>
-          </a>
-        </div>
+         <!-- Here nav.html is imported -->
       </header>
       <section id="hero">
         <div id="hero-text">
@@ -116,7 +97,7 @@
               <p class="body-medium">Simplify</p>
               <p class="headline-regular">UI Design & App Development</p>
               <div class="link">
-                <a class="headline-regular" href="#">Learn More</a>
+                <a class="headline-regular" href="project.html">Learn More</a>
               </div>
             </div>
           </article>
@@ -253,22 +234,7 @@
         </form>
       </section>
       <footer>
-        <div class="footer-container">
-          <div class="footer-info">
-            <img src="project-assets/logos/circle.svg" alt="Logo img" />
-            <p class="headline-regular">
-              2972 Westheimer Rd. Santa Ana, Illinois 85486
-            </p>
-          </div>
-          <div class="footer-links">
-            <a class="headline-regular" href="#">Team</a>
-            <a class="headline-regular" href="#">Services</a>
-            <a class="headline-regular" href="#">About Us</a>
-            <a class="headline-regular" href="#">Press</a>
-            <a class="headline-regular" href="#">Projects</a>
-            <a class="headline-regular" href="#">Privacy Policy</a>
-          </div>
-        </div>
+        <!-- Here footer.html is imported -->
       </footer>
     </div>
     <script src="functions.js"></script>
