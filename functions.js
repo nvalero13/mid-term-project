@@ -2,7 +2,6 @@ document.querySelector(".nav-burger").addEventListener("click", toggleMenu)
 
 let toggled = false
 function toggleMenu() {
-    
     if(!toggled) {
         document.querySelector(".nav-burger img").setAttribute("src","project-assets/nav/burguer-icon.svg")
     document.querySelector(".nav-info").style.transform = "translateY(-200px)";
