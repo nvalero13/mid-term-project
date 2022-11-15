@@ -1,12 +1,15 @@
-window.addEventListener("load", (event) => {
+let toggled = false;
+
+window.addEventListener("load", (e) => {
   setActive();
+  toggled = false;
 });
 
 function setActive() {
   let url = window.location.href;
   let urlSplit = url.split("/");
   let page = urlSplit[urlSplit.length - 1];
-console.log(page)
+
   $("body a").removeClass("active");
 
   switch (page) {
@@ -20,25 +23,36 @@ console.log(page)
       $(`#nav-contact li`).addClass("active");
       break;
   }
-  console.log("Hi");
 }
+
+addEventListener("resize", (event) => {
+  hideMenu()
+  if (window.innerWidth > 1024) document.querySelector(".nav-info").style.transform = "translateY(0px)";
+});
 
 document.querySelector(".nav-burger").addEventListener("click", toggleMenu);
 
-let toggled = false;
 function toggleMenu() {
   if (!toggled) {
+    hideMenu()
+  } else {
+    showMenu()
+  }
+}
+
+function hideMenu() {
     document
       .querySelector(".nav-burger img")
       .setAttribute("src", "project-assets/nav/burguer-icon.svg");
     document.querySelector(".nav-info").style.transform = "translateY(-200px)";
     toggled = true;
-  } else {
-    document
-      .querySelector(".nav-burger img")
-      .setAttribute("src", "project-assets/nav/cross-icon.svg");
-
-    document.querySelector(".nav-info").style.transform = "translateY(50px)";
-    toggled = false;
   }
+
+function showMenu() {
+  document
+    .querySelector(".nav-burger img")
+    .setAttribute("src", "project-assets/nav/cross-icon.svg");
+
+  document.querySelector(".nav-info").style.transform = "translateY(50px)";
+  toggled = false;
 }

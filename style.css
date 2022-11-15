@@ -90,6 +90,7 @@ h4 {
 
 header {
   position: relative;
+  padding-bottom: 40px;
 }
 
 .mobile-header {
@@ -102,7 +103,7 @@ header {
   align-items: center;
   justify-content: space-between;
   position: absolute;
-  z-index: 99;
+  z-index: 1;
 }
 
 .nav-info {
@@ -161,7 +162,6 @@ a .active {
 /* HERO SECTION */
 
 #hero {
-  padding-top: 40px;
   display: flex;
   flex-direction: column;
 }

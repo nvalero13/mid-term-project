@@ -1,0 +1,11 @@
+DUDAS:
+
+Margin-top not working
+
+Toggle Nav
+
+Cards Absolute
+
+Margin negativo
+
+Nombre commits
