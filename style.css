@@ -94,7 +94,7 @@ header {
 }
 
 .mobile-header {
-  padding: 30px 10% 0 10%;
+  padding: 30px 5% 0 5%;
   background-color: var(--neutral-light);
   box-sizing: border-box;
   width: 100%;
@@ -495,7 +495,32 @@ footer img {
   text-align: left;
 }
 
-/* TABLETS BREAKPOINT (764PX) */
+/* PROJECT DETAIL PAGE */
+
+#project-detail img {
+  margin: 20px 0 20px 0;
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+}
+
+#project-detail h1 {
+  text-align: center;
+  margin: 40px 0 0 0;
+}
+
+#project-detail p {
+  margin: 5px;
+}
+
+#project-detail .project-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* TABLETS BREAKPOINT (764PX)  -------------------------------------------------------------- */
 
 @media only screen and (min-width: 764px) {
   h1 {
@@ -621,14 +646,27 @@ footer img {
   .footer-links {
     margin: 20px;
   }
+
+  #project-detail h1 {
+    text-align: left;
+  }
+
+  #project-detail .project-info {
+    margin: 20px 0;
+    flex-direction: row;
+  }
+
+  .footer-info {
+    margin: 0;
+  }
 }
 
-/* TABLETS BREAKPOINT (1024PX) */
+/* DESKTOP BREAKPOINT (1024PX)  -------------------------------------------------------------- */
 
 @media only screen and (min-width: 1024px) {
   header {
     position: inherit;
-    padding: 20px 5%;
+    padding: 20px 5% 50px 5%;
     display: flex;
     justify-content: space-between;
   }
@@ -747,9 +785,5 @@ footer img {
   #contact {
     height: 400px;
     margin-bottom: 180px;
-  }
-
-  .footer-info {
-    margin: 0;
   }
 }
