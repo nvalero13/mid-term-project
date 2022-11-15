@@ -13,12 +13,15 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: Roboto, sans-serif;
   color: var(--neutral-dark);
-  padding: 0 10%;
+  padding: 0;
   margin: 0;
   background-color: var(--neutral-light);
+}
+
+section {
+  padding: 0 10%;
 }
 
 h1 {
@@ -81,15 +84,36 @@ h4 {
 }
 
 header {
-  margin-top: 30px;
+  position: relative;
+}
+
+.mobile-header {
+  padding: 30px 10% 0 10%;
+  background-color: var(--neutral-light);
+  box-sizing: border-box;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  z-index: 99;
 }
 
 .nav-info {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  position: absolute;
+  transform: translateY(-200px);
+  background-color: var(--neutral-light);
+  width: 100%;
+  padding-bottom: 10px;
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.1);
+
+  transition: transform 500ms;
 }
 
 .nav-burger {
@@ -99,14 +123,10 @@ header {
 
 nav ul {
   padding: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
 }
 
 nav li {
+  margin: 10px 0;
   list-style: none;
 }
 
@@ -131,6 +151,7 @@ button:hover {
 /* HERO SECTION */
 
 #hero {
+  padding-top: 40px;
   display: flex;
   flex-direction: column;
 }
@@ -245,9 +266,8 @@ button:hover {
 
 #feedback {
   background-color: var(--neutral-dark);
-  margin: 50px -15%;
-  padding: 20px 30px 90px 30px;
-  height: 350px;
+  margin: 50px 0;
+  padding: 30px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -372,7 +392,7 @@ button:hover {
 
 #contact {
   background-color: var(--secondary);
-  margin: 50px -15%;
+  margin: 50px 0;
   padding: 50px 10px;
   display: flex;
   flex-direction: column;
@@ -461,7 +481,8 @@ footer img {
   -ms-grid-rows: auto;
   grid-template-rows: auto;
   max-width: 390px;
-  width: 100%;
+  width: 90%;
+  margin: 10px auto;
 }
 
 .footer-links a {
