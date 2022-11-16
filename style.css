@@ -21,7 +21,7 @@ body {
 }
 
 #web-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -32,7 +32,7 @@ section {
 h1 {
   font-size: 30px;
   line-height: 130%;
-  margin: 20px 0;
+  margin: 40px 0 20px 0;
 }
 
 h2 {
@@ -149,14 +149,13 @@ nav a:visited {
   color: var(--neutral-medium);
 }
 
-button:hover {
+.blue-filled-btn:hover {
   cursor: pointer;
   background-color: var(--primary-hover);
 }
 
 a .active {
   color: var(--primary-default);
-  font-weight: bold;
 }
 
 /* HERO SECTION */
@@ -164,6 +163,10 @@ a .active {
 #hero {
   display: flex;
   flex-direction: column;
+}
+
+#hero h1 {
+  text-align: center;
 }
 
 #hero-img {
@@ -241,7 +244,7 @@ a .active {
 
 /* RECENT PROJECTS */
 
-#recent-projects h2 {
+#projects h2 {
   text-align: center;
 }
 
@@ -416,7 +419,7 @@ a .active {
   height: 80px;
 }
 
-form {
+#contact form {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -425,7 +428,7 @@ form {
   width: 80%;
 }
 
-.text-input {
+#contact .text-input {
   background-color: var(--neutral-lightblue);
   display: flex;
   width: 100%;
@@ -504,11 +507,6 @@ footer img {
   object-fit: cover;
 }
 
-#project-detail h1 {
-  text-align: center;
-  margin: 40px 0 0 0;
-}
-
 #project-detail p {
   margin: 5px;
 }
@@ -516,8 +514,60 @@ footer img {
 #project-detail .project-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+}
+
+#project-detail .subtitle {
+  color: var(--neutral-medium);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* CONTACT PAGE */
+
+#big-contact form {
+  display: block;
+  margin: 50px 0 50px 0;
+}
+
+#big-contact label {
+  display: inline-block;
+}
+
+#big-contact .text-input::placeholder {
+  color: var(--neutral-medium);
+}
+
+#big-contact .text-input {
+  display: block;
+  padding: 8px 12px 8px 20px;
+  width: 100%;
+  height: 80px;
+  box-sizing: border-box;
+  background-color: rgba(107, 112, 141, 0.1);
+  color: var(--neutral-medium);
+  margin: 10px 0 30px 0;
+}
+
+#big-contact .text-area {
+  border: none;
+  padding-top: 20px;
+  height: 200px;
+  color: var(--neutral-medium);
+}
+
+#big-contact .form-btn {
+  width: 100%;
+  height: 80px;
+}
+
+/* TABLETS BREAKPOINT (480PX)  -------------------------------------------------------------- */
+
+@media only screen and (min-width: 480px) {
+  h1 {
+    font-size: 40px;
+  }
 }
 
 /* TABLETS BREAKPOINT (764PX)  -------------------------------------------------------------- */
@@ -527,6 +577,11 @@ footer img {
     font-size: 60px;
     line-height: 130%;
     margin: 20px 0;
+    text-align: left;
+  }
+
+  #hero h1 {
+    text-align: center;
   }
 
   h2 {
@@ -543,6 +598,10 @@ footer img {
     text-align: left;
   }
 
+  header {
+    padding-bottom: 60px;
+  }
+
   #hero-img {
     width: 80%;
   }
@@ -551,22 +610,22 @@ footer img {
     flex-direction: row;
   }
 
-  #recent-projects h2 {
+  #projects h2 {
     text-align: left;
     margin: 50px 0;
   }
 
-  #recent-projects .cards {
+  #projects .cards {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
   }
 
-  #recent-projects .card img {
+  #projects .card img {
     height: 300px;
   }
 
-  #recent-projects .card {
+  #projects .card {
     width: 47%;
   }
 
@@ -647,10 +706,6 @@ footer img {
     margin: 20px;
   }
 
-  #project-detail h1 {
-    text-align: left;
-  }
-
   #project-detail .project-info {
     margin: 20px 0;
     flex-direction: row;
@@ -658,6 +713,16 @@ footer img {
 
   .footer-info {
     margin: 0;
+  }
+
+  #project-detail .subtitle {
+    font-size: 24px;
+  }
+
+  .email-phone-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
   }
 }
 
@@ -726,6 +791,10 @@ footer img {
     gap: 30px;
   }
 
+  #hero h1 {
+    text-align: left;
+  }
+
   #hero-text {
     text-align: left;
     max-width: 500px;
@@ -741,21 +810,21 @@ footer img {
     margin: 50px;
   }
 
-  #recent-projects {
-    margin: 200px 0;
+  #projects {
+    margin: 150px 0;
   }
 
   #companies {
     display: flex;
     justify-content: space-around;
-    margin: 50px 0 200px 0;
+    margin: 50px 0 150px 0;
   }
 
   .amazon-logo {
     display: block;
   }
 
-  #recent-projects .card {
+  #projects .card {
     width: 30%;
   }
 

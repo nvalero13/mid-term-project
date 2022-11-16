@@ -9,3 +9,5 @@ Cards Absolute
 Margin negativo
 
 Nombre commits
+
+Textarea styling

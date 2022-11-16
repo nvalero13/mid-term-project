@@ -17,6 +17,29 @@
 <body>
     <div id="web-container">
     <header></header>
+    <section id="big-contact">
+      <h1>Contact Us</h1>
+      <form action="">
+        <label for="name" class="body-regular">Full Name *</label>
+        <input id="name" class="headline-regular text-input" name="name" type="text" placeholder="Enter your full name">
+        <div class="email-phone-div">
+          <div>
+            <label for="email" class="body-regular">Email</label>
+            <input id="email" class="headline-regular text-input" name="email" type="email" placeholder="Enter your email">
+          </div>
+          <div>
+            <label for="phone" class="body-regular">Phone</label>
+            <input id="phone" class="headline-regular text-input" name="phone" type="tel" placeholder="Enter your phone">
+          </div>
+        </div>
+        <label for="message" class="body-regular">Message *</label>
+        <textarea id="message" class="headline-regular text-input text-area" name="message" placeholder="Write your message here...">
+        </textarea>
+        <input type="submit" value="Submit" class="body-regular blue-filled-btn form-btn">
+      </form>
+    </section>
+
+
     <footer></footer>
     </div>
     <script src="functions.js"></script>
