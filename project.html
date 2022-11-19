@@ -75,20 +75,25 @@
       <section id="contact">
         <h3>Do you have any questions?</h3>
         <p class="body-regular">Let us help you!</p>
-        <form>
+        <form onsubmit=suscribe(event)>
           <div class="text-input">
             <img
               src="project-assets/newsletter/icon/mail.svg"
               alt="Mail icon"
             />
             <input
+              id="suscribe-email"
               class="headline-regular"
               type="text"
               placeholder="Enter your email"
+              required
             />
           </div>
-          <button class="blue-filled-btn headline-regular">Suscribe</button>
+          <input type="submit" value="Suscribe" id="suscribe-btn" class="blue-filled-btn headline-regular"></input>
+          <div class="suscribe-message"><p></p></div>
         </form>
+
+      
       </section>
       <footer></footer>
     </div>

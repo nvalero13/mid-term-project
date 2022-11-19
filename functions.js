@@ -30,8 +30,6 @@ addEventListener("resize", (event) => {
   if (window.innerWidth > 1024) document.querySelector(".nav-info").style.transform = "translateY(0px)";
 });
 
-document.querySelector(".nav-burger").addEventListener("click", toggleMenu);
-
 function toggleMenu() {
   if (!toggled) {
     hideMenu()
@@ -56,3 +54,47 @@ function showMenu() {
   document.querySelector(".nav-info").style.transform = "translateY(50px)";
   toggled = false;
 }
+
+
+function suscribe(event) {
+  event.preventDefault();
+  const email = document.querySelector("#contact #suscribe-email").value
+  
+  if (email.includes("@") && email.includes(".")) {
+    document.querySelector("#contact .suscribe-message").classList.add('succeed', 'show-and-hide')
+    document.querySelector("#contact .suscribe-message p").innerHTML = "Thank you! Your submission has been received!"
+  } else {
+    document.querySelector("#contact .suscribe-message").classList.add('fail', 'show-and-hide')
+    document.querySelector("#contact .suscribe-message p").innerHTML = "Oops! Something went wrong while submitting the form!"
+  }
+
+  document.querySelector("#contact #suscribe-email").value = ""
+  setTimeout(() => {
+  document.querySelector("#contact .suscribe-message").classList.remove("show-and-hide", "succeed", "fail")
+    }, 5000)
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const message = document.querySelector("#big-contact textarea").value
+
+  document.querySelector("#big-contact #submit").value="Please wait..."
+
+  setTimeout(() => {
+    document.querySelector("#big-contact #submit").value="Submit"
+    if (message.includes("Hi")) {
+      document.querySelector("#big-contact .suscribe-message").classList.add('succeed', 'show-and-hide')
+      document.querySelector("#big-contact .suscribe-message p").innerHTML = "Thank you! Your submission has been received!"
+    } else {
+      document.querySelector("#big-contact .suscribe-message").classList.add('fail', 'show-and-hide')
+      document.querySelector("#big-contact .suscribe-message p").innerHTML = "Oops! Something went wrong while submitting the form!"
+    }
+  
+    // Reset values
+    setTimeout(() => {
+    document.querySelector("#big-contact .suscribe-message").classList.remove("show-and-hide", "succeed", "fail")
+      }, 5000)
+  },1000)
+  
+}
+

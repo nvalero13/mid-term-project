@@ -20,6 +20,17 @@ body {
   background-color: var(--neutral-light);
 }
 
+textarea {
+  font-family: Roboto, sans-serif;
+}
+
+#contact #suscribe-email:-webkit-autofill,
+#contact #suscribe-email:-webkit-autofill:hover,
+#contact #suscribe-email-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px var(--neutral-lightblue) inset !important;
+  box-shadow: 0 0 0 30px var(--neutral-lightblue) inset !important;
+}
+
 #web-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -414,7 +425,7 @@ a .active {
   color: var(--neutral-dark);
 }
 
-#contact button {
+#contact #suscribe-btn {
   width: 100%;
   height: 80px;
 }
@@ -438,6 +449,11 @@ a .active {
   height: 80px;
 }
 
+#contact #suscribe-email {
+  outline: none;
+  background-color: transparent;
+}
+
 input {
   border: none;
   background-color: transparent;
@@ -446,6 +462,45 @@ input {
 
 input::placeholder {
   color: var(--neutral-dark);
+}
+
+.suscribe-message {
+  margin-top: 10px;
+  width: 80%;
+  display: block;
+  opacity: 0;
+}
+
+#big-contact .suscribe-message {
+  width: 100%;
+  display: block;
+  padding: 4px 0;
+  text-align: center;
+  opacity: 0;
+}
+
+.fail {
+  background-color: #ffdede;
+}
+
+.succeed {
+  background-color: #e4ffde;
+}
+
+.show-and-hide {
+  animation: show-and-hide 5s ease-in-out forwards;
+}
+
+@keyframes show-and-hide {
+  10% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /* FOOTER */
@@ -684,7 +739,7 @@ footer img {
     flex-direction: row;
   }
 
-  #contact button {
+  #contact #suscribe-btn {
     width: 50%;
     height: 80px;
   }

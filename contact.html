@@ -19,9 +19,9 @@
     <header></header>
     <section id="big-contact">
       <h1>Contact Us</h1>
-      <form action="">
-        <label for="name" class="body-regular">Full Name *</label>
-        <input id="name" class="headline-regular text-input" name="name" type="text" placeholder="Enter your full name">
+      <form onsubmit=handleSubmit(event)>
+        <label for="name" class="body-regular" >Full Name *</label>
+        <input required id="name" class="headline-regular text-input" name="name" type="text" placeholder="Enter your full name">
         <div class="email-phone-div">
           <div>
             <label for="email" class="body-regular">Email</label>
@@ -33,10 +33,12 @@
           </div>
         </div>
         <label for="message" class="body-regular">Message *</label>
-        <textarea id="message" class="headline-regular text-input text-area" name="message" placeholder="Write your message here...">
-        </textarea>
-        <input type="submit" value="Submit" class="body-regular blue-filled-btn form-btn">
+        <textarea required id="message" class="headline-regular text-input text-area" name="message" placeholder="Write your message here..."></textarea>
+
+        <input id="submit" type="submit" value="Submit" class="body-regular blue-filled-btn form-btn" data-wait="Please wait...">
+        <div class="suscribe-message"><p></p></div>
       </form>
+     
     </section>
 
 
