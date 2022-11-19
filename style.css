@@ -279,6 +279,12 @@ a .active {
   box-shadow: 0 38px 77px rgba(0, 0, 0, 0.1);
 }
 
+.card .body-medium {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .card .body-medium,
 .card p {
   margin: 15px 0;
