@@ -201,3 +201,19 @@ function handleSubmit(event) {
     }, 5000);
   }, 1000);
 }
+
+// ENTER ANIMATION ON SCROLL 
+
+const observer = new IntersectionObserver((entries) => {
+
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('scrolled');
+    } else {
+      entry.target.classList.remove('scrolled');
+    }
+  })
+});
+
+const sections = document.querySelectorAll('section');
+sections.forEach(section => observer.observe(section));
