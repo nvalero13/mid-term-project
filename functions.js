@@ -10,15 +10,16 @@ function getData() {
 
   if (url.includes("home.html")) {
     // GET DATA AND FILL CARDS´
-    getProjects()
+    getProjects(3)
   } else if (url.includes("project.html")) {
     getProjectDetails(url)
-    getProjects()
+    getProjects(3)
+  } else if (url.includes("projects.html")) {
+    getProjects(9)
   }
-;
 }
 
-async function getProjects() {
+async function getProjects(num) {
   let data = [];
   let count = 0;
   try {
@@ -27,7 +28,7 @@ async function getProjects() {
     );
     const allData = await res.json();
 
-    while (count < 3) {
+    while (count < num) {
       const res = await fetch(
         `https://collectionapi.metmuseum.org/public/collection/v1//objects/${
           allData.objectIDs[
@@ -37,9 +38,11 @@ async function getProjects() {
       );
       const resJSON = await res.json();
       data.push(resJSON);
+      console.log(data)
       count++;
     }
     fillCards(data);
+
   } catch (e) {
     console.log(e);
   }
@@ -68,14 +71,14 @@ async function getProjectDetails() {
 }
 
 function fillCards(data) {
-  document.querySelector("#projects .cards").innerHTML = "";
+  document.querySelector("#projects .cards, #projects-page .cards").innerHTML = "";
   data.forEach((project, index) => {
     let imgUrl = "";
     project.primaryImage === ""
       ? (imgUrl = "project-assets/projects-section/1.jpg")
       : (imgUrl = project.primaryImage);
     document.querySelector(
-      "#projects .cards"
+      "#projects .cards,#projects-page .cards"
     ).innerHTML += `<article id="card-${index}" class="card"> 
     <img
       src="${imgUrl}"
@@ -222,3 +225,4 @@ const observer = new IntersectionObserver((entries) => {
 
 const sections = document.querySelectorAll('section');
 sections.forEach(section => observer.observe(section));
+

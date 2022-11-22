@@ -298,6 +298,9 @@ a .active {
 .card .body-medium,
 .card p {
   margin: 15px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card a {
@@ -686,17 +689,20 @@ footer img {
     margin: 50px 0;
   }
 
-  #projects .cards {
+  #projects .cards,
+  #projects-page .cards {
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
   }
 
-  #projects .card img {
+  #projects .card img,
+  #projects-page .card img {
     height: 300px;
   }
 
-  #projects .card {
+  #projects .card,
+  #projects-page .card {
     width: 47%;
   }
 
@@ -895,7 +901,8 @@ footer img {
     display: block;
   }
 
-  #projects .card {
+  #projects .card,
+  #projects-page .card {
     width: 30%;
   }
 
