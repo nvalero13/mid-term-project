@@ -45,15 +45,20 @@ async function getProjects() {
   }
 }
 
-async function getProjectDetails(url) {
+async function getProjectDetails() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(window.location.search);
 
-  const params = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => searchParams.get(prop),
-  });
-  console.log(params.projectId)
+  console.log('STRING:', queryString);
+  console.log(urlParams.get('projectId'));
+
+  // const params = new Proxy(new URLSearchParams(window.location.search), {
+  //   get: (searchParams, prop) => searchParams.get(prop),
+  // });
+  // console.log(params.projectId)
 
   const res = await fetch(
-    `https://collectionapi.metmuseum.org/public/collection/v1//objects/${params.projectId}`
+    `https://collectionapi.metmuseum.org/public/collection/v1//objects/${urlParams.get('projectId')}`
   );
   const projectData = await res.json();
 
