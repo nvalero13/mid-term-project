@@ -12,6 +12,7 @@ function getData() {
     // GET DATA AND FILL CARDS´
     getProjects(3)
   } else if (url.includes("project.html")) {
+    document.querySelector("#date").innerHTML = actualDate()
     getProjectDetails(url)
     getProjects(3)
   } else if (url.includes("projects.html")) {
@@ -225,4 +226,15 @@ const observer = new IntersectionObserver((entries) => {
 
 const sections = document.querySelectorAll('section');
 sections.forEach(section => observer.observe(section));
+
+// DATE 
+function actualDate() {
+  let today = new Date()
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  const yyyy = today.getFullYear();
+
+  today = dd + '/' + mm + '/' + yyyy;
+  return today
+}
 
