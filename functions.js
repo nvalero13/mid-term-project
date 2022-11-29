@@ -1,11 +1,73 @@
 window.addEventListener("load", (e) => {
-  setActive();
+  loadTemplates();
   getData();
+
   toggled = false;
+  
 });
+
+
+function loadTemplates() {
+  const navTemplate = document.getElementById("nav-template")
+
+  navTemplate.innerHTML = `<div class="mobile-header">
+  <img src="project-assets/logos/circle.svg" alt="Circle logo" />
+  <button class="nav-burger" onclick="toggleMenu()">
+    <img
+      src="project-assets/nav/burguer-icon.svg"
+      alt="Burger menu icon"
+    />
+  </button>
+</div>
+<div class="nav-info">
+  <nav>
+    <ul>
+      <a id="nav-home" href="home.html"
+        ><li class="headline-medium">Home</li></a
+      >
+      <a id="nav-projects" href="projects.html"
+        ><li class="headline-medium">Projects</li></a
+      >
+      <a id="nav-contact" href="#"
+        ><li class="headline-medium">Services</li></a
+      >
+    </ul>
+  </nav>
+  <a href="contact.html">
+    <button class="blue-filled-btn headline-medium">Contact Us</button>
+  </a>
+</div>`
+
+  const footerTemplate = document.getElementById("footer-template")
+
+  footerTemplate.innerHTML = `<div class="footer-container">
+  <div class="footer-info">
+    <img src="project-assets/logos/circle.svg" alt="Logo img" />
+    <p class="headline-regular">
+      2972 Westheimer Rd. Santa Ana, Illinois 85486
+    </p>
+  </div>
+  <div class="footer-links">
+    <a class="headline-regular" href="#">Team</a>
+    <a class="headline-regular" href="#">Services</a>
+    <a class="headline-regular" href="#">About Us</a>
+    <a class="headline-regular" href="#">Press</a>
+    <a class="headline-regular" href="#">Projects</a>
+    <a class="headline-regular" href="#">Privacy Policy</a>
+  </div>
+</div>`
+
+  document.querySelector("header").appendChild(navTemplate.content)
+  document.querySelector("footer").appendChild(footerTemplate.content)
+
+  navTemplate.addEventListener("load", setActive())
+}
+
+
 
 // API GET
 function getData() {
+  
   let url = window.location.href;
 
   if (url.includes("home.html")) {
@@ -102,17 +164,17 @@ function setActive() {
   let urlSplit = url.split("/");
   let page = urlSplit[urlSplit.length - 1];
 
-  $("body a").removeClass("active");
+  document.querySelectorAll("body a").forEach((el) => el.classList.remove("active"));
 
   switch (page) {
     case "home.html":
-      $(`#nav-home li`).addClass("active");
+      document.querySelector(`#nav-home li`).classList.add("active");
       break;
-    case "project.html":
-      $(`#nav-projects li`).addClass("active");
+    case "projects.html":
+      document.querySelector(`#nav-projects li`).classList.add("active");
       break;
     case "contact.html":
-      $(`#nav-contact li`).addClass("active");
+      document.querySelector(`#nav-contact li`).classList.add("active");
       break;
   }
 }

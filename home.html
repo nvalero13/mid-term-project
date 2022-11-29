@@ -10,18 +10,14 @@
       rel="stylesheet"
       href="//fonts.googleapis.com/css?family=Roboto:300,400,600,700&amp;lang=en"
     />
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script>
-      $(()=>{
-        $("header").load("nav.html");
-        $("footer").load("footer.html");
-      });
-    </script>
+   
   </head>
   <body>
     <div id="web-container">
       <header>
-         <!-- Here nav.html is imported -->
+         <template id="nav-template">
+          
+         </template>
       </header>
       <section id="hero">
         <div id="hero-text">
@@ -277,7 +273,9 @@
       
       </section>
       <footer>
-        <!-- Here footer.html is imported -->
+        <template id="footer-template">
+          
+        </template>
       </footer>
     </div>
     <script src="functions.js"></script>

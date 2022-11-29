@@ -700,6 +700,10 @@ footer img {
     width: 47%;
   }
 
+  #projects-page .cards {
+    min-height: 800px;
+  }
+
   #feedback {
     padding: 30px 20%;
   }

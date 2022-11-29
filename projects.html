@@ -6,25 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script>
-        $(() => {
-          $("header").load("nav.html");
-          $("footer").load("footer.html");
-        });
-      </script>
+    <link
+    rel="stylesheet"
+    href="//fonts.googleapis.com/css?family=Roboto:300,400,600,700&amp;lang=en"
+  />
 </head>
 <body>
     <div id="web-container">
-    <header></header>
+    <header>
+      <template id="nav-template">
+          
+      </template>
+    </header>
     <section id="projects-page">
         <h1>Projects</h1>
         <div class="cards">
 
         </div>
       </section>
-      <footer></footer>
+      <footer>
+        <template id="footer-template">
+          
+        </template>
+      </footer>
     </div>
-      <script src="functions.js"></script>
+  <script src="functions.js"></script>
 </body>
 </html>
