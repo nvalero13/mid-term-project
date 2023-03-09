@@ -1,14 +1,12 @@
-window.addEventListener("load", (e) => {
+window.addEventListener("load", () => {
   loadTemplates();
   getData();
 
   toggled = false;
-  
 });
 
-
 function loadTemplates() {
-  const navTemplate = document.getElementById("nav-template")
+  const navTemplate = document.getElementById("nav-template");
 
   navTemplate.innerHTML = `<div class="mobile-header">
   <img src="project-assets/logos/circle.svg" alt="Circle logo" />
@@ -36,9 +34,9 @@ function loadTemplates() {
   <a href="contact.html">
     <button class="blue-filled-btn headline-medium">Contact Us</button>
   </a>
-</div>`
+</div>`;
 
-  const footerTemplate = document.getElementById("footer-template")
+  const footerTemplate = document.getElementById("footer-template");
 
   footerTemplate.innerHTML = `<div class="footer-container">
   <div class="footer-info">
@@ -55,30 +53,27 @@ function loadTemplates() {
     <a class="headline-regular" href="#">Projects</a>
     <a class="headline-regular" href="#">Privacy Policy</a>
   </div>
-</div>`
+</div>`;
 
-  document.querySelector("header").appendChild(navTemplate.content)
-  document.querySelector("footer").appendChild(footerTemplate.content)
+  document.querySelector("header").appendChild(navTemplate.content);
+  document.querySelector("footer").appendChild(footerTemplate.content);
 
-  navTemplate.addEventListener("load", setActive())
+  navTemplate.addEventListener("load", setActive());
 }
-
-
 
 // API GET
 function getData() {
-  
   let url = window.location.href;
 
   if (url.includes("home.html")) {
     // GET DATA AND FILL CARDS´
-    getProjects(3)
+    getProjects(3);
   } else if (url.includes("project.html")) {
-    document.querySelector("#date").innerHTML = actualDate()
-    getProjectDetails(url)
-    getProjects(3)
+    document.querySelector("#date").innerHTML = actualDate();
+    getProjectDetails(url);
+    getProjects(3);
   } else if (url.includes("projects.html")) {
-    getProjects(9)
+    getProjects(9);
   }
 }
 
@@ -101,22 +96,21 @@ async function getProjects(num) {
       );
       const resJSON = await res.json();
       data.push(resJSON);
-      console.log(data)
+
       count++;
     }
     fillCards(data);
-
   } catch (e) {
     console.log(e);
   }
 }
 
 async function getProjectDetails() {
-  const queryString = window.location.search;
   const urlParams = new URLSearchParams(window.location.search);
+  // const queryString = window.location.search;
 
-  console.log('STRING:', queryString);
-  console.log(urlParams.get('projectId'));
+  // console.log('STRING:', queryString);
+  // console.log(urlParams.get('projectId'));
 
   // const params = new Proxy(new URLSearchParams(window.location.search), {
   //   get: (searchParams, prop) => searchParams.get(prop),
@@ -124,7 +118,9 @@ async function getProjectDetails() {
   // console.log(params.projectId)
 
   const res = await fetch(
-    `https://collectionapi.metmuseum.org/public/collection/v1//objects/${urlParams.get('projectId')}`
+    `https://collectionapi.metmuseum.org/public/collection/v1//objects/${urlParams.get(
+      "projectId"
+    )}`
   );
   const projectData = await res.json();
 
@@ -134,7 +130,8 @@ async function getProjectDetails() {
 }
 
 function fillCards(data) {
-  document.querySelector("#projects .cards, #projects-page .cards").innerHTML = "";
+  document.querySelector("#projects .cards, #projects-page .cards").innerHTML =
+    "";
   data.forEach((project, index) => {
     let imgUrl = "";
     project.primaryImage === ""
@@ -164,7 +161,9 @@ function setActive() {
   let urlSplit = url.split("/");
   let page = urlSplit[urlSplit.length - 1];
 
-  document.querySelectorAll("body a").forEach((el) => el.classList.remove("active"));
+  document
+    .querySelectorAll("body a")
+    .forEach((el) => el.classList.remove("active"));
 
   switch (page) {
     case "home.html":
@@ -273,30 +272,28 @@ function handleSubmit(event) {
   }, 1000);
 }
 
-// ENTER ANIMATION ON SCROLL 
+// ENTER ANIMATION ON SCROLL
 
 const observer = new IntersectionObserver((entries) => {
-
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('scrolled');
+      entry.target.classList.add("scrolled");
     } else {
-      entry.target.classList.remove('scrolled');
+      entry.target.classList.remove("scrolled");
     }
-  })
+  });
 });
 
-const sections = document.querySelectorAll('section');
-sections.forEach(section => observer.observe(section));
+const sections = document.querySelectorAll("section");
+sections.forEach((section) => observer.observe(section));
 
-// DATE 
+// DATE
 function actualDate() {
-  let today = new Date()
-  const dd = String(today.getDate()).padStart(2, '0');
-  const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let today = new Date();
+  const dd = String(today.getDate()).padStart(2, "0");
+  const mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
   const yyyy = today.getFullYear();
 
-  today = dd + '/' + mm + '/' + yyyy;
-  return today
+  today = dd + "/" + mm + "/" + yyyy;
+  return today;
 }
-
